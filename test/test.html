@@ -1,0 +1,452 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="http://y1.ifengimg.com/css/min/basic_new_v2.css">
+    <script src="http://y0.ifengimg.com/fe/F_comment_new/scripts/base-core_5664eba4.min.js"></script>
+
+    <link rel="stylesheet" href="http://y0.ifengimg.com/fe/commentPage/styles/commentPage_depmodules_ff4c8ff0.min.css">
+
+
+    <script>
+        if(glue.device.type =="pc"){
+            document.write('<link rel="stylesheet" href="http://y0.ifengimg.com/fe/commentPage/styles/commentPage_depmodules_pc_b608bc02.min.css">');
+        }
+    </script>
+
+
+    <script>
+        if(glue.device.type =="mobile"){
+            document.write('<link rel="stylesheet" href="http://y0.ifengimg.com/fe/commentPage/styles/commentPage_depmodules_mobile_d491d1bd.min.css">');
+        }
+    </script>
+
+
+    <script>
+        if(glue.device.type =="pad"){
+            document.write('<link rel="stylesheet" href="http://y0.ifengimg.com/fe/commentPage/styles/commentPage_depmodules_pad_a7fb9e69.min.css">');
+        }
+    </script>
+
+    <script>
+        requirejs.config({
+            paths:{
+                "jquery#1.8.1" : "http://y1.ifengimg.com/fe/jQuery/jquery-1.8.1.min",
+                "artTemplate#3.0.3" : "http://y0.ifengimg.com/fe/commentPage/scripts/commentPage_depmodules_07b1b7a3.min",
+                "public_login": "http://y1.ifengimg.com/commonpage/20151202/public_login.min",
+                "artTemplate" :"http://y1.ifengimg.com/a/2015/1105/artTemplate",
+                "F#1.2.0" : "http://y0.ifengimg.com/base/origin/F-amd-1.2.0.min",
+                "cookie_global#1.0.2" : "http://y0.ifengimg.com/fe/commentPage/scripts/commentPage_depmodules_ff5af9c3.min"
+            },
+            waitSeconds: 20,shim: {}});
+    </script>
+
+
+
+    <script>
+        if(glue.device.type =="pad"){
+            requirejs.config({
+                paths:{
+                    "F_comment_new#1.2.44" : "http://y0.ifengimg.com/fe/commentPage/scripts/commentPage_depmodules_pad_68cfbf04.min"
+                },
+                waitSeconds: 20,shim: {}});
+
+        }
+
+        if(glue.device.type =="mobile"){
+            requirejs.config({
+                paths:{
+                    "F_comment_new#1.2.44" : "http://y0.ifengimg.com/fe/commentPage/scripts/commentPage_depmodules_mobile_5366389e.min"
+                },
+                waitSeconds: 20,shim: {}});
+
+        }
+
+        if(glue.device.type =="pc"){
+            requirejs.config({
+                paths:{
+                    "F_comment_new#1.2.44" : "http://y0.ifengimg.com/fe/commentPage/scripts/commentPage_depmodules_pc_a8e904b5.min"
+                },
+                waitSeconds: 20,shim: {}});
+
+        }
+    </script>
+
+
+    <script>
+        define('getTitleCallback',['jquery#1.8.1'], function($){
+            return function(docName){
+                // 标题为null或者为''
+                if(docName && docName != ''){
+                    $('#js_title').text(docName);
+                    $(document).attr('title', docName);
+                }
+                if($('.js_head').eq(1)){
+                    $('.js_head').eq(1).find('.w-tips').eq(1).hide().next().hide();
+                }
+            };
+        });
+
+        define("pageParams", ['getTitleCallback'], function(getTitleCallback){
+            // 解析url中的参数 : docUrl, docName, skey
+            var urlSearch = window.location.search.slice(1);
+            var params = {};
+            var paramStr = urlSearch.split('&');
+            for(var i = 0, len = paramStr.length; i < len; i++){
+                var strs = paramStr[i].split('=');
+                params[strs[0]] = decodeURIComponent(strs[1]);
+            }
+            getTitleCallback(params.docName);
+            return params;
+        });
+
+
+
+
+    </script>
+
+    <cmpp><!--#include virtual="/cmpp_12005/chip/s_common_adjs_inice.html"--></cmpp>
+    <cmpp><!--#include virtual="/cmpp_12005/chip/s_common_statjs_pv.html"--></cmpp>
+</head>
+<body>
+
+
+
+
+<div>
+    <!-- 加载图片  -->
+    <div class="loading sd_ie6" id="js_loading" style="display: none;">
+        <img src="http://y0.ifengimg.com/newcommentpage/images/loading.gif" width="32" height="32" alt="" title="">
+    </div>
+    <!--start : header-->
+    <div class="mod-commentHeader phoneNone">
+        <div class="if-width mod-commentHeader-inner clearfix" >
+                    <span class="floatright w-rightBar">
+                        <a class="w-a" href="http://www.ifeng.com" target="_blank">凤凰网首页</a> <em>|</em>
+                        <a id="js_regBtn" href="https://id.ifeng.com/user/register" >注册</a>
+                        <a id="js_loginBtn" class="w-out" href="#">登录</a>
+                        <a id="js_userName" href="http://id.ifeng.com/my/info" class="w-name" style="display:none;"></a>
+                        <a id="js_logoutBtn" class="f-login" href="#" style="display:none;">退出</a>
+                    </span>
+            <span class="w-banner">凤凰评论</span>
+        </div>
+    </div>
+    <script>
+
+        require(['jquery#1.8.1', 'public_login'], function($){
+
+            $('#js_logoutBtn').attr('href','http://my.ifeng.com/?_c=index&_a=logout&backurl=' + window.location.href);
+
+            if(window['IS_LOGIN']()){
+                loginCallback();
+            }
+
+            // 登录按钮
+            $('#js_loginBtn').on('click', function(){
+                window['GLOBAL_LOGIN']();
+            });
+
+
+            window['REG_LOGIN_CALLBACK'](1, function(){
+                loginCallback();
+            });
+
+            function getCookie(name) {
+                var cookie = "; " + document.cookie;
+                var pointer = cookie.indexOf("; " + name + "=");
+                var nextPointer = cookie.indexOf(";", pointer + 2);
+                if (pointer >= 0) {
+                    return decodeURIComponent(cookie.substring(pointer + name.length + 3, nextPointer > 0 ? nextPointer : cookie.length));
+                }
+                return "";
+            }
+
+            function loginCallback() {
+                $('#js_loginBtn').hide();
+                $('#js_regBtn').hide();
+                // 显示用户名和退出按钮
+                var sid = getCookie('sid');
+                var uname = decodeURIComponent(sid.substring(32));
+                $('#js_userName').text(uname).show();
+                $('#js_logoutBtn').show();
+            }
+
+        });
+    </script>
+    <!--endi : header -->
+    <div class="if-width i-wrap">
+
+        <div class="ad_01 pt10 phoneNone">
+            <cmpp><!--#include virtual="/ssi-incs/s_all_content_opinion_banner_top.inc.html"--></cmpp>
+        </div>
+        <div class="i-mainWrap i-commentPage clearfix">
+            <div class="i-mainContent">
+                <div class="i-commentArticleTitle">
+                    <a id="js_title" href="#" target="_blank"></a>
+                </div>
+
+                <div id="js_cmtContainer"></div>
+
+                <script>
+
+                    require(['pageParams', 'jquery#1.8.1', 'getTitleCallback'], function(params, $, getTitleCallback){
+
+                        var titleDom = $('#js_title');
+                        if(params.docUrl){
+                            titleDom.attr('href', params.docUrl);
+                        }
+                        if(params.docName){
+                            titleDom.text(params.docName);
+                        }
+
+                        var loadingDom = $('#js_loading');
+
+                        var data = {
+                            'docTitle' : params.docName,
+                            'docUrl' : params.docUrl,
+                            'skey' : params.skey,
+                            'speUrl' : '',
+                            'isSpecial': params.docUrl.indexOf("/special/") > 0 ? true : false,
+                            'hotLimit' : 10,
+                            'newLimit' : 20,
+                            'isComment': true,
+                            'loadingDom': loadingDom,
+                            'getTitleCallback': getTitleCallback,
+                            'adHtml' : '<!--#include virtual="/cmpp_18001/chip/s_opinion_shuidi.html"-->'
+                        };
+
+                        glue.widgetRegist('js_cmtContainer', 'v1', "F_comment_new#1.2.44", null, 1, data);
+                        glue.run();
+
+                    });
+
+                </script>
+            </div>
+
+            <div class="i-mainSide phoneNone">
+                <!--start: mostComment list-->
+                <div class=" mod-mostComment" id='admod1'>
+                    <cmpp><!--#include virtual="/ssi-incs/s_all_content_opinion_hzh_01.inc.html"--></cmpp>
+                </div>
+                <div class="mod-sideGray mod-hotCommentList" id="js_hotRank">
+                    <div class="w-tabBox pt10">
+                        <span class="w-icon-hot"></span>
+                        <ul class="w-box-li clearfix js_tabs">
+                            <li class="w-tab current" data-id="dayHot" style="cursor:pointer;">本日热评</li>
+                            <li class="w-tab" data-id="weekHot" style="cursor:pointer;">本周热评</li>
+                        </ul>
+                    </div>
+                    <div class="js_sheets">
+                    </div>
+                </div>
+
+                <script>
+                    if(glue.device.type == 'pc'){
+                        require(['jquery#1.8.1', 'artTemplate', 'pageParams'], function($, template, pageParams){
+                            var container =  $('#js_hotRank');
+                            var sheetsContainer = container.find('.js_sheets');
+                            var sheetTmp =
+                                    '<ul class="mod-hotComment-ul" id="{{id}}" {{if hide}}style="display:none;"{{/if}}>' +
+                                    '{{each dataList as item i}}' +
+                                    '<li><p><a href="{{item.doc_url}}" target="_blank">{{item.doc_name}}</a></p><p class="w-num w-num-1">{{item.comments_count_now}}</p></li>' +
+                                    '{{/each}}' +
+                                    '</ul>';
+
+                            var url = 'http://comment.ifeng.com/get';
+                            var params = {
+                                'format':'js',
+                                'job': 13,
+                                'callback':'getHotRankCallback',
+                                'doc_url': pageParams.docUrl
+                            }
+                            $.ajax({
+                                url: url,
+                                data: params,
+                                cache: true,
+                                dataType: 'jsonp',
+                                jsonp:'callback',
+                                jsonpCallback:'getHotRankCallback',
+                                success: function(rankJson){
+                                    if(rankJson && rankJson.dayTop){
+                                        container.find('.js_sheets').append($(template.compile(sheetTmp)({'hide':false, 'id':'dayHot','dataList':rankJson.dayTop})));
+                                    }
+                                    if(rankJson && rankJson.weekTop){
+                                        container.find('.js_sheets').append($(template.compile(sheetTmp)({'hide':true, 'id':'weekHot','dataList':rankJson.weekTop})));
+                                    }
+                                }
+                            });
+
+                            container.on('click', '.js_tabs li', function(){
+                                $(this).addClass('current').siblings().removeClass('current');
+                                var id = $(this).data('id');
+                                $('#' + id).show().siblings().hide();
+                                return false;
+                            });
+
+                        });
+                    }
+                </script>
+
+                <!--start: mostComment list-->
+                <div class="mod-mostComment">
+                    <cmpp><!--#include virtual="/ssi-incs/s_all_content_opinion_150512_ad_button_02.inc.html"--></cmpp>
+                </div>
+                <div class="mod-sideGray mod-hotCommentList">
+                    <div class=" mod-hotResearch pt10">
+                        <div class="w-tabBox ">
+                            <div class="w-box-li clearfix">
+                                <span class="w-tab w-tab-cur" href="javascript:void(0);">热门调查</span>
+                            </div>
+                        </div>
+                        <div id="js_hotSurvey" class="mod-searchColorBox"></div>
+                    </div>
+                </div>
+
+                <script>
+
+                    if(glue.device.type == 'pc'){
+                        require(['jquery#1.8.1', 'artTemplate'], function($, template){
+
+                            var params = {
+                                'job':12,
+                                'format':'js',
+                                'callback':'surveyCallback'
+                            };
+
+                            $.ajax({
+                                url: 'http://comment.ifeng.com/get',
+                                dataType:'jsonp',
+                                data: params,
+                                jsonp: 'callback',
+                                jsonpCallback: 'surveyCallback',
+                                cache: true,
+                                success: function(surveyJson){
+                                    var html ='';
+                                    for(var i = 0; i < surveyJson.length; i++){
+                                        var obj = surveyJson[i];
+                                        html +="<div class='d_line'></div><p class='w-title w-title-black'>"+obj.questionfirst+"</p>";
+                                        var results = obj.resultArray.option;
+                                        for(var j = 0; j < results.length; j++){
+                                            var opt = j + 1;
+                                            var item = results[j];
+                                            html += "<div class='w-opt w-opt-" + opt + "'> \
+                                                                <span class='w-order w-order-" + opt + "'>" + String.fromCharCode(64 + parseInt(opt)) + "</span> \
+                                                                <div class='colorNum'> \
+                                                                    <div class='color js_color' style='width:" + item.nump.toFixed(2) + "%'></div> \
+                                                                    <span class='num js_num'>" + item.nump.toFixed(2) + "%</span> \
+                                                                </div> \
+                                                                <p class='vtxt js_surTxt' style='display: none;'>" + item.title + "</p> \
+                                                            </div>";
+                                        }
+                                        html += "<span class='pr_10'> \
+                                                    <em>" + obj.pnum + "</em>人投票 截止：" + obj.endtime.substr(0,10) + " \
+                                                    <a href='" + obj.newlink + "' target='_blank'> \
+                                                    <img src='http://img.ifeng.com/tres/appres/newcomment/images/2011/vote.gif' alt='我来投一票' title='我来投一票'></a> \
+                                                     </span>" ;
+                                    }
+
+                                    $('#js_hotSurvey').html(html);
+                                }
+                            });
+
+                            $('#js_hotSurvey').on('mouseover', '.js_color, .js_num', function(){
+                                $(this).parent().next('.js_surTxt').show();
+                            }).on('mouseout', '.js_color, .js_num', function(){
+                                $(this).parent().next('.js_surTxt').hide();
+                            });
+
+                        });
+                    }
+                </script>
+                <!--右侧广告begin-->
+                <style>
+                    .fixed01{ width:300px;height:250px; margin-top:20px;}
+                    .fixAd{ position: fixed; top:0px;left: ; z-index: 999; }
+                </style>
+                <div class="fixed01" id="ad_300_250">
+                    <cmpp><!--#include virtual="/ssi-incs/s_all_2j_index_160818_ad_button02.inc.html"--></cmpp>
+                </div>
+                <script>
+                    jQuery(function(){
+                        jQuery(window).scroll(function(){
+                            var winScrollTop =jQuery(window).scrollTop() ;
+                            var fbt=jQuery("#ad_300_250").offset().top;
+                            var t1=jQuery('.i-mainSide').height()+jQuery('.i-mainSide').offset().top;
+                            var l=jQuery("#ad_300_250").offset().left;
+                            if(winScrollTop+20>fbt){
+                                jQuery("#ad_300_250").addClass("fixAd");
+                                jQuery("#ad_300_250").css({"left":l+"px"});
+                            }else if(winScrollTop<fbt&&winScrollTop<t1){
+                                jQuery("#ad_300_250").removeClass("fixAd");
+                            }
+                        });
+                    })
+                </script>
+                <!--右侧广告end-->
+            </div>
+
+
+
+            <div class="i-backToTop sd_ie6">
+                <div class="mod-toTop">
+                    <a href="http://help.ifeng.com/" class="w-a sug-a phoneNone" target="_blank"></a>
+                    <a id="js_toTop" href="javascript:void(0);" class="w-a backTop-a"></a>
+                </div>
+            </div>
+
+            <script>
+                require(['jquery#1.8.1'], function($){
+                    $('#js_toTop').on('click', function(){
+                        $(window).scrollTop(0);
+                    });
+                    return false;
+                });
+
+                if(glue.device.type != 'pc'){
+                    require(['jquery#1.8.1'], function($){
+
+                        var startY = 0;
+                        var endY = 0;
+                        var diff = 0;
+
+                        $(document.body).on('touchstart', function(e){
+                            startY = e.originalEvent.changedTouches[0].pageY;
+                        }).on('touchmove', function(e){
+                            endY = e.originalEvent.changedTouches[0].pageY;
+                            diff = endY - startY;
+                            if(diff > 5){
+                                $('#js_toTop').show();
+                            } else {
+                                $('#js_toTop').hide();
+                            }
+                        });
+                    });
+                }
+
+            </script>
+        </div>
+
+        <div class="ad_bottom mt18 phoneNone">
+            <cmpp><!--#include virtual="/ssi-incs/s_all_content_opinion_150512_ad_banner_buttom.inc.html"--></cmpp>
+        </div>
+
+    </div>
+
+    <div class="mod-commentFooter phoneNone">
+        <cmpp><!--#include virtual="/cmpp_12005/chip/s_common_index_footer.html"--></cmpp>
+        <style type="text/css">
+            .footer {border-top: none;}
+        </style>
+    </div>
+
+</div>
+
+<cmpp><!--#include virtual="/cmpp_12005/chip/s_common_index_stat_body_end.html"--></cmpp>
+
+</body>
+</html>

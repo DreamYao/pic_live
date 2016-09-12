@@ -1,354 +1,466 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>图文直播3.7模板_资讯模板专题_凤凰网</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>图文直播3.8（不可用）_测试_凤凰网</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-   <link rel="stylesheet" href="http://y1.ifengimg.com/css/min/basic_new_v2.css" />
-   <script src="http://y0.ifengimg.com/commonpage/1130/F-RequireJS.min.js"></script>
-   <script src="http://y0.ifengimg.com/p/login/20131227/public_login.min.js"></script>
-   <script src="http://p0.ifengimg.com/fe/liveroom/scripts/base-core_5e95813a.min.js"></script>
-   <link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules_106ad076.min.css" />
-<script>
-if(glue.device.type =="pc"){
-  document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules-pc1_311a291a.min.css">');
-}
-</script>
+    <link rel="stylesheet" href="http://y1.ifengimg.com/css/min/basic_new_v2.css"/>
+    <script src="http://y0.ifengimg.com/commonpage/1130/F-RequireJS.min.js"></script>
+    <script src="http://y0.ifengimg.com/p/login/20131227/public_login.min.js"></script>
+    <script src="http://p0.ifengimg.com/fe/liveroom/scripts/base-core_5e95813a.min.js"></script>
+    <link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules_106ad076.min.css"/>
+    <script>
+        if (glue.device.type == "pc") {
+            document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules-pc1_ce9d4184.min.css" />');
+        }
+    </script>
 
-   
-<script>
-if(glue.device.type =="mobile"){
-  document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules-phone_711ec9d6.min.css">');
-}
-</script>
+    <script>
+        if (glue.device.type == "mobile") {
+            document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules-phone_21130e54.min.css" />');
+        }
+    </script>
 
-   
-<script>
-if(glue.device.type =="pad"){
-  document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules-pad_1ba486c2.min.css">');
-}
-</script>
+    <script>
+        if (glue.device.type == "pad") {
+            document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/modules-pad_176a691a.min.css" />');
+        }
+    </script>
 
-   
-<script>
-if(glue.device.type =="pad"){
-  document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/main-pad_f03734ac.min.css">');
-}
-</script>
+    <script>
+        if (glue.device.type == "pad") {
+            document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/main-pad_d5e6e2f2.min.css" />');
+        }
+    </script>
 
-   
-<script>
-if(glue.device.type =="mobile"){
-  document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/main-mobile_9975491d.min.css">');
-}
-</script>
+    <script>
+        if (glue.device.type == "mobile") {
+            document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/main-mobile_a94f6ec1.min.css" />');
+        }
+    </script>
 
-   
-<script>
-if(glue.device.type =="pc"){
-  document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/main-pc_147fe126.min.css">');
-}
-</script>
+    <script>
+        if (glue.device.type == "pc") {
+            document.write('<link rel="stylesheet" href="http://p0.ifengimg.com/fe/liveroom/styles/main-pc_da2c2f89.min.css" />');
+        }
+    </script>
 
+    <script>
+        if (glue.device.type != 'pc') {
+            document.write('<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />');
+        }
+
+    </script>
+    <style>
+        .mod-comment-area .comment-area {
+            _width: 80%;
+        }
+
+        .mod-news-content .news-con .info {
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        .closeVideo {
+            margin: 5px 0px 8px 0px;
+            display: block;
+            width: 30px;
+        }
+
+        .mod-backToTop-singleBlock .goto {
+            height: 24px;
+        }
+
+        .p-numTips .sort-btn {
+            color: #004276;
+        }
+
+        .liveaudio_container {
+            background-size: 12px 20px;
+        }
+
+        .news-phos-2, .news-phos-3 {
+            zoom: 1;
+        }
+
+        .mod-picPop .w-imgBox img.left {
+            cursor: url(http://p3.ifengimg.com/386ce73cec45533b/2016/36/arrow_left_32.cur), auto;
+        }
+
+        .mod-picPop .w-imgBox img.right {
+            cursor: url(http://p3.ifengimg.com/386ce73cec45533b/2016/36/arrow_right_32.cur), auto;
+        }
+
+    </style>
+    <script>
+        var liveStreamSwfUrl = "http://vxml.ifengimg.com/swf/ifengLivePlayer_v5.0.72.swf";
+        var liveSwfUrl = 'http://vxml.ifengimg.com/swf/ifengFreePlayer_v6.0.7_dm15.swf';
+    </script>
+    <script src="http://m1.ifengimg.com/ifeng/sources/inice_v1.js"></script>
+    <script src="http://h0.ifengimg.com/20150625/fa.min.js"></script>
+</head>
+<body>
 <script>
-if(glue.device.type != 'pc'){
-    document.write('<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">');
-}
-</script>
-<style>
-.mod-comment-area .comment-area{
-    _width:80%;
-}
-.mod-news-content .news-con .info {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-.closeVideo {
-  margin: 5px 0px 8px 0px;
-  display: block;
-  width: 30px;
-}
-  
-.mod-backToTop-singleBlock .goto {
-height: 24px;
-}
-.p-numTips .sort-btn {
-color: #004276;
-}
-</style><script>
-    var liveStreamSwfUrl = "http://vxml.ifengimg.com/swf/ifengLivePlayer_v5.0.72.swf";
-    var liveSwfUrl = 'http://vxml.ifengimg.com/swf/ifengFreePlayer_v6.0.7_dm15.swf';
-</script>
-<script src="http://m1.ifengimg.com/ifeng/sources/inice_v1.js"></script>
-<script src="http://h0.ifengimg.com/20150625/fa.min.js"></script>
-</head><body><script>
     var pageData = {};
-    pageData.title = "图文直播3.7模板",
-    pageData.url = "http://news.ifeng.com/demo/special/twzb37mbnew1/";
-</script> 
-<div class="p-infoHeader"> <img src="http://y2.ifengimg.com/a/2015/0902/wechat-logo.jpg" style="width:0; height:0;"> 
- <div class="logoBox fl">
-   <a class="logo" href="http://news.ifeng.com/" target="_blank" style="background:none">
-  <img src="http://y3.ifengimg.com/209f2854104b2115/2016/9/logo_news_z.gif" style="width:106px;height:21px"></img>
-</a> 
- </div> 
- <div class="p-loginBar fr top-link top-link-pc"> 
-  <a href="http://www.ifeng.com/" target="_blank">凤凰网首页</a> 
-  <em>|</em> 
-  <span class="js_accountMgr"> <a href="javascript:;" class="g2b login-btn">登录</a> <a href="http://my.ifeng.com/?_c=register&_a=new-account">注册</a> </span> 
- </div> 
-</div> 
-<p class="top-link"> <img src="http://y3.ifengimg.com/209f2854104b2115/2016/9/logo_news_z.gif" width="103" height="19"/> 
- <span class="js_accountMgr"> <a href="javascript:;" class="login-btn">登录</a> </span> </p> 
-<!--end :  凤凰资讯头 -->  <div class="p-topBanner"> 
- <div class="inner"> 
-  <div class="p-topBg"> 
-   <h1 class="banner"> <span class="banner-txt">图文直播3.7操作手册</span></h1> 
-   <p class="p-topRead">导读：图文直播3.7模板新增自定义背景图、logo更新替换、二维码自动生成等功能。</p> 
-  </div> 
- </div> 
-</div> 
+    pageData.title = "图文直播3.8（不可用）";
+            pageData.url = "http://news.ifeng.com/test/special/twzb38/";
+</script>
+<div class="p-infoHeader"><img src="http://y2.ifengimg.com/a/2015/0902/wechat-logo.jpg" style="width:0; height:0;">
+
+    <div class="logoBox fl">
+        <a class="logo" href="http://news.ifeng.com/" target="_blank" style="background:none">
+            <img src="http://y3.ifengimg.com/209f2854104b2115/2016/9/logo_news_z.gif"
+                 style="width:106px;height:21px"></img>
+        </a>
+    </div>
+    <div class="p-loginBar fr top-link top-link-pc">
+        <a href="http://www.ifeng.com/" target="_blank">凤凰网首页</a>
+        <em>|</em>
+        <span class="js_accountMgr"> <a href="javascript:;" class="g2b login-btn">登录</a> <a
+                href="http://my.ifeng.com/?_c=register&_a=new-account">注册</a> </span>
+    </div>
+</div>
+<p class="top-link"><img src="http://y3.ifengimg.com/209f2854104b2115/2016/9/logo_news_z.gif" width="103" height="19"/>
+    <span class="js_accountMgr"> <a href="javascript:;" class="login-btn">登录</a> </span></p>
+<!--end :  凤凰资讯头 -->
+<div class="p-topBanner">
+    <div class="inner">
+        <div class="p-topBg">
+            <h1 class="banner"><span class="banner-txt">图文直播3.7操作手册</span></h1>
+
+            <p class="p-topRead">导读：图文直播3.7模板新增自定义背景图、logo更新替换、二维码自动生成等功能。</p>
+        </div>
+    </div>
+</div>
 <!--
 news List
---> 
-<div class="p-wrap clearfix"> 
- <div class="p-leftContent">
-   <div class="livestreamPlane" style="display:none;">
-        <div class="mod-news-block mod-newsList-topLine clearfix js_liveComment">
-            <div class="mod-news-time">
-                <span class="title time">
-                </span>
-            </div>
-            <div class="mod-news-content">
-                <div class="news-con ">
-                    <h3 class="news-title">
-                        <span></span>
-                    </h3>
-                    <div class="info"></div>
-                    <div id="livestreamId" style="position: relative;"></div>
+-->
+<div class="p-wrap clearfix">
+    <div class="p-leftContent">
+        <div class="livestreamPlane" style="display:none;">
+            <div class="mod-news-block mod-newsList-topLine clearfix js_liveComment">
+                <div class="mod-news-time">
+                    <span class="title time"><i>凤凰直播</i></span>
                 </div>
+                <div class="mod-news-content">
+                    <div class="news-con ">
+                        <!--
+                                            <h3 class="news-title">
+                                                <span></span>
+                                            </h3>
+                                            <div class="info"></div>
+                        -->
+                        <div id="livestreamId" style="position: relative;"></div>
+                    </div>
 
+                </div>
             </div>
         </div>
-      </div>  
-  <div id="livesurvey" class="research"></div> 
-  <div id="livepage"></div> 
- </div> 
- <div class="p-rightContent"> 
-  <!--start  :  side block  --> <div class="mod-onAirNewsList"> 
- <h4 class="w-title"><a href="##">右侧标题</a></h4> 
- <ul class="w-listBox"> 
-  <li class="w-withImg"> 
-   <div class="w-tit"> 
-    <a href="##">阿尔及利亚343243</a> 
-   </div> 
-   <div class="w-con clearfix"> 
-    <a href="#" class="w-imgA"><img src="http://y0.ifengimg.com/fe/liveroom/images/exa_69da4b96.png" class="w-img" alt="" /></a> 
-    <p class="w-txt">阿尔及利亚阿尔及利亚阿尔及利亚阿尔及利亚阿尔及利亚阿尔及利亚阿阿尔及利亚阿尔及利亚</p> 
-   </div> </li> 
-  <li class="w-withImg"> 
-   <div class="w-tit"> 
-    <a href="##">阿尔及利亚343243</a> 
-   </div> 
-   <div class="w-con clearfix"> 
-    <a href="#" class="w-imgA"><img src="http://y0.ifengimg.com/fe/liveroom/images/exa_69da4b96.png" class="w-img" alt="" /></a> 
-    <p class="w-txt">阿尔及利亚阿尔及利及利亚阿尔及利亚阿阿尔及利亚阿尔及利亚</p> 
-   </div> </li> 
-  <li class=""> 
-   <div class="w-tit"> 
-    <a href="##">阿尔及利亚343243</a> 
-   </div> 
-   <div class="w-con clearfix"> 
-    <p class="w-txt">阿尔及利亚阿尔及阿尔及利亚</p> 
-   </div> </li> 
-  <li class=""> 
-   <div class="w-tit"> 
-    <a href="##">阿尔及利亚343243</a> 
-   </div> 
-   <div class="w-con clearfix"> 
-    <p class="w-txt">阿尔及利亚阿尔及利亚尔及利亚阿尔及利亚</p> 
-   </div> </li> 
-  <li class=""> 
-   <div class="w-tit"> 
-    <a href="##">阿尔及利亚343243</a> 
-   </div> 
-   <div class="w-con clearfix"> 
-    <p class="w-txt">阿尔及利亚阿尔及利亚阿尔及及利亚阿阿尔及利亚阿尔及利亚</p> 
-   </div> </li> 
- </ul> 
-</div> <div class="mod-2codeBox clearfix"> 
- <div class="w-img"> 
-  <img src="http://y0.ifengimg.com/fe/liveroom/images/pc-side2code-v3_912d1efc.png" alt="" width="80" height="80" class="js_qrcode"/> 
- </div> 
- <div class="w-right"> 
-  <p class="w-b">手机看直播</p> 
-  <p class="w-t">微信扫一扫</p> 
- </div> 
-</div> 
- </div> 
- <!--出离了XXX--> 
- <div class="p-optBox"> 
-  <div class="mod-sideOptBox"> 
-   <a href="javascript:;" class="w-a share-a" id="sideSharebox"></a> 
-   <a href="javascript:;" target="_blank" class="w-a talk-a js_selectcomment"><span class="num js_commentCount">0</span></a> 
-   <a href="javascript:;" class="w-a backTop-a js_backTopBtn"></a> 
-  </div> 
- </div> 
-</div> 
-<!--dom变更 add:backtotop--> 
-<div class="mod-backToTop-singleBlock"> 
- <a href="javascript:;" class="goto ">返回顶部</a> 
-</div> <script>
-  var skey ="";
+        <div id="livesurvey" class="research"></div>
+        <div id="livepage"></div>
+    </div>
+    <div class="p-rightContent">
+        <!--start  :  side block  -->
+        <div class="mod-onAirNewsList">
+            <h4 class="w-title"><a href="##">右侧标题</a></h4>
+            <ul class="w-listBox">
+                <li class="w-withImg">
+                    <div class="w-tit">
+                        <a href="##">阿尔及利亚343243</a>
+                    </div>
+                    <div class="w-con clearfix">
+                        <a href="#" class="w-imgA"><img src="http://y0.ifengimg.com/fe/liveroom/images/exa_69da4b96.png"
+                                                        class="w-img" alt=""/></a>
 
-  var docUrl = 'http://news.ifeng.com/demo/special/twzbv31zxmb/index.shtml';
-    if(docUrl.indexOf('?') >0){
-        docUrl = docUrl.substring(0 , docUrl.indexOf('?'));
+                        <p class="w-txt">阿尔及利亚阿尔及利亚阿尔及利亚阿尔及利亚阿尔及利亚阿尔及利亚阿阿尔及利亚阿尔及利亚</p>
+                    </div>
+                </li>
+                <li class="w-withImg">
+                    <div class="w-tit">
+                        <a href="##">阿尔及利亚343243</a>
+                    </div>
+                    <div class="w-con clearfix">
+                        <a href="#" class="w-imgA"><img src="http://y0.ifengimg.com/fe/liveroom/images/exa_69da4b96.png"
+                                                        class="w-img" alt=""/></a>
+
+                        <p class="w-txt">阿尔及利亚阿尔及利及利亚阿尔及利亚阿阿尔及利亚阿尔及利亚</p>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="w-tit">
+                        <a href="##">阿尔及利亚343243</a>
+                    </div>
+                    <div class="w-con clearfix">
+                        <p class="w-txt">阿尔及利亚阿尔及阿尔及利亚</p>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="w-tit">
+                        <a href="##">阿尔及利亚343243</a>
+                    </div>
+                    <div class="w-con clearfix">
+                        <p class="w-txt">阿尔及利亚阿尔及利亚尔及利亚阿尔及利亚</p>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="w-tit">
+                        <a href="##">阿尔及利亚343243</a>
+                    </div>
+                    <div class="w-con clearfix">
+                        <p class="w-txt">阿尔及利亚阿尔及利亚阿尔及及利亚阿阿尔及利亚阿尔及利亚</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="mod-2codeBox clearfix">
+            <div class="w-img">
+                <img src="http://y0.ifengimg.com/fe/liveroom/images/pc-side2code-v3_912d1efc.png" alt="" width="80"
+                     height="80" class="js_qrcode"/>
+            </div>
+            <div class="w-right">
+                <p class="w-b">凤凰新闻客户端</p>
+
+                <p class="w-t">华人第一移动资讯台</p>
+            </div>
+        </div>
+    </div>
+    <!--出离了XXX-->
+    <div class="p-optBox">
+        <div class="mod-sideOptBox">
+            <a href="javascript:;" class="w-a share-a" id="sideSharebox"></a>
+            <a href="javascript:;" target="_blank" class="w-a talk-a js_selectcomment"><span
+                    class="num js_commentCount">0</span></a>
+            <a href="javascript:;" class="w-a backTop-a js_backTopBtn"></a>
+        </div>
+    </div>
+</div>
+<!--dom变更 add:backtotop-->
+<div class="mod-backToTop-singleBlock">
+    <a href="javascript:;" class="goto ">返回顶部</a>
+</div>
+<script>
+    var skey = "";
+
+    var docUrl = 'http://news.ifeng.com/demo/special/twzbv31zxmb/index.shtml';
+    if (docUrl.indexOf('?') > 0) {
+        docUrl = docUrl.substring(0, docUrl.indexOf('?'));
     }
-    if(docUrl.indexOf('#') >0){
-        docUrl = docUrl.substring(0 , docUrl.indexOf('#'));
+    if (docUrl.indexOf('#') > 0) {
+        docUrl = docUrl.substring(0, docUrl.indexOf('#'));
     }
     var speUrl = docUrl;
-    if(docUrl.lastIndexOf('/') > 0){
-        speUrl = docUrl.substring(0, docUrl.lastIndexOf('/')+1);
+    if (docUrl.lastIndexOf('/') > 0) {
+        speUrl = docUrl.substring(0, docUrl.lastIndexOf('/') + 1);
     }
 
-  	  var  sinaappkey = '2512457640';
-  	  var  sinarelateUid = '2615417307';
-  	  var  qqappkey = '801cf76d3cfc44ada52ec13114e84a96';
+    var sinaappkey = '2512457640';
+    var sinarelateUid = '2615417307';
+    var qqappkey = '801cf76d3cfc44ada52ec13114e84a96';
     //'pc' ? ['qqzone', 'weixin', 'qq', 'sina'] : ['qqzone', 'qq' ,'sina' ];
-    var roomsharetypes = glue.device.type == 'pc' ? ['qqzone', 'weixin', {name:'qq',appkey:qqappkey}, {name:'sina',appkey:sinaappkey,ralateUid:sinarelateUid}]
-                                                : ['qqzone', {name:'qq',appkey:qqappkey} ,{name:'sina',appkey:sinaappkey,ralateUid:sinarelateUid} ];
-    var livepageSharetypes = [{name:'sina',appkey:sinaappkey,ralateUid:sinarelateUid} ,  {name:'qq',appkey:qqappkey} , 'qqzone'];
+    var roomsharetypes = glue.device.type == 'pc' ? ['qqzone', 'weixin', {name: 'qq', appkey: qqappkey}, {
+        name: 'sina',
+        appkey: sinaappkey,
+        ralateUid: sinarelateUid
+    }]
+            : ['qqzone', {name: 'qq', appkey: qqappkey}, {name: 'sina', appkey: sinaappkey, ralateUid: sinarelateUid}];
+    var livepageSharetypes = [{name: 'sina', appkey: sinaappkey, ralateUid: sinarelateUid}, {
+        name: 'qq',
+        appkey: qqappkey
+    }, 'qqzone'];
 
     var shareConfig = {
         sina: {
-          appkey: '2512457640',
-          ralateUid: '2615417307'
+            appkey: '2512457640',
+            ralateUid: '2615417307'
         },
         qq: {
-          appkey: '801cf76d3cfc44ada52ec13114e84a96'
+            appkey: '801cf76d3cfc44ada52ec13114e84a96'
         },
-        qqzone: {
-
-        },
-        weixin: {
-        }
+        qqzone: {},
+        weixin: {}
     }
 
-    var liveConfig =  {
-      docName : pageData.title   //专题的标题名称
-        ,showHot : false             //是否显示评论最热列表
-        ,showLast : true           //是否显示评论最新列表
-        ,showHotTitle : true             //是否显示评论最热标题
-        ,showLastTitle : false           //是否显示评论最新标题
-        ,hotSize : 10                   //最热一页显示数量
-        ,lastSize : 10                  //最新一页显示熟练
-        ,showLastMoreBtn : true
-        ,showHotMoreBtn : false
-        ,useComment:true            //是否可以回复
-        ,appSyn:false
-        ,appAddr:'http://liveapi.ifeng.com/data/get/'
-        ,liveid : 100008                 //直播间的id
-        ,isFang : true             //品论是否可以盖楼
-        ,shareTypes : livepageSharetypes  //分享的类型
-        ,shareOrg : glue.device.type == 'pc' ? 'bottom' : 'left'           //分享弹出的方向 top , left ,right ,bottom
-        ,imageRatio : glue.device.type == 'mobile' ? 'mw210_mh240' : 'mw240_mh260' //直播间图片的缩放比列
-        ,picImageRatio : 'mw1024'    //弹出大图的缩放比例
-        ,videoWidth : glue.device.type == 'mobile' ? 210 : 527           //播放视频的宽度
-        ,videoRatio : 0.75          //播放视频的比例 高/宽比 0.75就是 4:3
-        ,pageSize : 15             //一页显示的数量
-        ,commentFllowScroll : false //评论输入框是否跟随滚动
-        ,commentTheme : glue.device.type == 'mobile' ? '' : 'theme_inner'     //评论主题
-        ,commentNeedLogin : glue.device.type == 'mobile' ? false : true //手机用户不需要登录ß
-        ,shareClassName : glue.device.type == 'pc' ? 'mod-shareTheme-col' : ''
-        ,appAddr: 'http://liveapi.ifeng.com/data/get/'
-        ,liveSwfUrl: liveSwfUrl
+    var liveConfig = {
+        docName: pageData.title   //专题的标题名称
+        , showHot: false             //是否显示评论最热列表
+        , showLast: true           //是否显示评论最新列表
+        , showHotTitle: true             //是否显示评论最热标题
+        , showLastTitle: false           //是否显示评论最新标题
+        , hotSize: 10                   //最热一页显示数量
+        , lastSize: 10                  //最新一页显示熟练
+        , showLastMoreBtn: true
+        , showHotMoreBtn: false
+        , useComment: true            //是否可以回复
+        , appSyn: false
+        , appAddr: 'http://liveapi.ifeng.com/data/get/'
+        , liveid: 100008                 //直播间的id
+        , isFang: true             //品论是否可以盖楼
+        , shareTypes: livepageSharetypes  //分享的类型
+        , shareOrg: glue.device.type == 'pc' ? 'bottom' : 'left'           //分享弹出的方向 top , left ,right ,bottom
+        , imageRatio: glue.device.type == 'mobile' ? 'mw210_mh240' : 'mw240_mh260' //直播间图片的缩放比列
+        , picImageRatio: 'mw1024'    //弹出大图的缩放比例
+        , videoWidth: glue.device.type == 'mobile' ? 210 : 527           //播放视频的宽度
+        , videoRatio: 0.75          //播放视频的比例 高/宽比 0.75就是 4:3
+        , pageSize: 15             //一页显示的数量
+        , commentFllowScroll: false //评论输入框是否跟随滚动
+        , commentTheme: glue.device.type == 'mobile' ? '' : 'theme_inner'     //评论主题
+        , commentNeedLogin: glue.device.type == 'mobile' ? false : true //手机用户不需要登录ß
+        , shareClassName: glue.device.type == 'pc' ? 'mod-shareTheme-col' : ''
+        , appAddr: 'http://liveapi.ifeng.com/data/get/'
+        , liveSwfUrl: liveSwfUrl
     }
 
-</script> 
+</script>
 <script>
-   requirejs.config({
-     paths:{
-      "jquery#1.8.1" : "http://y1.ifengimg.com/fe/jQuery/jquery-1.8.1.min",
-      "artTemplate#3.0.3" : "js/modules_4446b083",
-      "livesurvey#1.0.6" : "js/modules_4446b083",
-      "handlebar#1.3.3" : "js/modules_4446b083",
-      "liveShare#1.0.15" : "js/modules_4446b083",
-      "videoCore#1.0.6" : "js/modules_4446b083",
-      "LivePage#1.5.21" : "js/modules_4446b083"
+    requirejs.config({
+        paths: {
+            "jquery#1.8.1": "http://y1.ifengimg.com/fe/jQuery/jquery-1.8.1.min",
+            "artTemplate#3.0.3": "js/modules_9a85535b",
+            "livesurvey#1.0.6": "js/modules_9a85535b",//调查
+            "videoCore#1.0.6": "js/modules_9a85535b",//视频
+            "handlebar#1.3.3": "js/modules_9a85535b",//
+            "liveShare#1.0.15": "js/modules_9a85535b",//分享
+            "liveaudio#1.0.6": "js/modules_9a85535b",//音频
+            "LivePage#1.6.3": "js/modules_9a85535b"
 
-     },
-     waitSeconds: 20,shim: {}});
+        },
+        waitSeconds: 20, shim: {}
+    });
 </script>
 
 <script>
-if(glue.device.type =="pc"){
-   requirejs.config({
-     paths:{
-      "livePic#1.0.9" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pc_8b792501.min",
-      "comment#1.1.14" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pc_8b792501.min",
-      "liveVideo#1.1.4" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pc_8b792501.min",
-      "liveStreamVideo#1.0.7" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pc_8b792501.min"
+    if (glue.device.type == "pc") {
+        requirejs.config({
+            paths: {
+                "liveStreamVideo#1.0.9": "js/modules-pc_d569bf75",
+                "livePic#1.0.9": "js/modules-pc_d569bf75",
+                "comment#1.1.14": "js/modules-pc_d569bf75",
+                "liveVideo#1.1.4": "js/modules-pc_d569bf75",
+                "liveslide#1.0.7": "js/modules-pc_d569bf75"
 
-     },
-     waitSeconds: 20,shim: {}});
+            },
+            waitSeconds: 20, shim: {}
+        });
 
-}
+    }
 </script>
 
 <script>
-if(glue.device.type =="mobile"){
-   requirejs.config({
-     paths:{
-      "livePic#1.0.9" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-mobile_b1cf0c7d.min",
-      "comment#1.1.14" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-mobile_b1cf0c7d.min",
-      "liveVideo#1.1.4" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-mobile_b1cf0c7d.min",
-      "liveStreamVideo#1.0.7" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-mobile_b1cf0c7d.min"
+    if (glue.device.type == "mobile") {
+        requirejs.config({
+            paths: {
+                "liveStreamVideo#1.0.9": "js/modules-mobile_a556c1ac",
+                "livePic#1.0.9": "js/modules-mobile_a556c1ac",
+                "comment#1.1.14": "js/modules-mobile_a556c1ac",
+                "liveVideo#1.1.4": "js/modules-mobile_a556c1ac",
+                "liveslide#1.0.7": "js/modules-mobile_a556c1ac"
 
-     },
-     waitSeconds: 20,shim: {}});
+            },
+            waitSeconds: 20, shim: {}
+    });
 
-}
+    }
 </script>
 
 <script>
-if(glue.device.type =="pad"){
-   requirejs.config({
-     paths:{
-      "livePic#1.0.9" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pad_f92bada9.min",
-      "comment#1.1.14" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pad_f92bada9.min",
-      "liveVideo#1.1.4" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pad_f92bada9.min",
-      "liveStreamVideo#1.0.7" : "http://p0.ifengimg.com/fe/liveroom/scripts/modules-pad_f92bada9.min"
+    if (glue.device.type == "pad") {
+        requirejs.config({
+            paths: {
+                "liveStreamVideo#1.0.9": "js/modules-pad_f5a131a3",
+                "livePic#1.0.9": "js/modules-pad_f5a131a3",
+                "comment#1.1.14": "js/modules-pad_f5a131a3",
+                "liveVideo#1.1.4": "js/modules-pad_f5a131a3",
+                "liveslide#1.0.7": "js/modules-pad_f5a131a3"
 
-     },
-     waitSeconds: 20,shim: {}});
+            },
+            waitSeconds: 20, shim: {}
+        });
 
-}
+    }
 </script>
 
-<script src="http://p0.ifengimg.com/fe/liveroom/scripts/liveroom_core_37ebfdcb.min.js"></script>
+<script src="js/liveroom_core_d23c5389.js"></script>
 <!-- 页尾通栏  -->
 
 <style>
-    .footer { width: 1000px; margin: 0 auto; }
-    .footer .footlink { color: #000; height: 28px; line-height: 28px; padding-top: 15px; border-top: 1px solid #fff; overflow: hidden; }
-    .footer .footlink a { color: #000; }
-    .footer .footlink span { padding: 0 5px; }
-    .footer .fk_l { float: left; }
-    .footer .fk_r { width: 200px; float: right; }
-    .footer .fk_r ul { overflow: hidden; }
-    .footer .fk_r ul li { height: 28px; line-height: 28px; overflow: hidden; float: left; }
-    .footer .fk_r ul .l_bg001 { background: url(http://y1.ifengimg.com/38716b164e0f5e63/2013/0716/nav0416_14.gif) no-repeat left 9px; padding-left: 19px; }
-    .footer .fk_r ul .l_bg002 { background: url(http://y3.ifengimg.com/9db17ab793eef980/2013/0403/nav0416_17.gif) no-repeat left 9px; padding-left: 17px; margin-left: 18px; }
-    .footer .copyright { font-family: Arial; color: #666; height: 28px; line-height: 28px; text-align: center; overflow: hidden; }
-    .footer .copyright span { font-family: "宋体"; }
+    .footer {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .footer .footlink {
+        color: #000;
+        height: 28px;
+        line-height: 28px;
+        padding-top: 15px;
+        border-top: 1px solid #fff;
+        overflow: hidden;
+    }
+
+    .footer .footlink a {
+        color: #000;
+    }
+
+    .footer .footlink span {
+        padding: 0 5px;
+    }
+
+    .footer .fk_l {
+        float: left;
+    }
+
+    .footer .fk_r {
+        width: 200px;
+        float: right;
+    }
+
+    .footer .fk_r ul {
+        overflow: hidden;
+    }
+
+    .footer .fk_r ul li {
+        height: 28px;
+        line-height: 28px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .footer .fk_r ul .l_bg001 {
+        background: url(http://y1.ifengimg.com/38716b164e0f5e63/2013/0716/nav0416_14.gif) no-repeat left 9px;
+        padding-left: 19px;
+    }
+
+    .footer .fk_r ul .l_bg002 {
+        background: url(http://y3.ifengimg.com/9db17ab793eef980/2013/0403/nav0416_17.gif) no-repeat left 9px;
+        padding-left: 17px;
+        margin-left: 18px;
+    }
+
+    .footer .copyright {
+        font-family: Arial;
+        color: #666;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .footer .copyright span {
+        font-family: "宋体";
+    }
 </style>
 <div class="footer mt02" id="footer">
     <div class="footlink clearfix">
         <div class="fk_l">
-            <a href="http://www.ifeng.com/corp/about/intro/" target="_blank">凤凰新媒体介绍</a><span>|</span><a href="http://ir.ifeng.com/" target="_blank">投资者关系 Investor Relations</a><span>|</span><a href="http://biz.ifeng.com/" target="_blank">广告服务</a><span>|</span><a href="http://career.ifeng.com/" target="_blank">诚征英才</a><span>|</span><a href="http://www.ifeng.com/corp/privacy/" target="_blank">保护隐私权</a><span>|</span><a href="http://www.ifeng.com/corp/exemption/" target="_blank">免责条款</a><span>|</span><a href="http://help.ifeng.com/" target="_blank">意见反馈</a><span>|</span><a href="http://phtv.ifeng.com/intro/" target="_blank">凤凰卫视介绍</a>
+            <a href="http://www.ifeng.com/corp/about/intro/" target="_blank">凤凰新媒体介绍</a><span>|</span><a
+                href="http://ir.ifeng.com/" target="_blank">投资者关系 Investor Relations</a><span>|</span><a
+                href="http://biz.ifeng.com/" target="_blank">广告服务</a><span>|</span><a href="http://career.ifeng.com/"
+                                                                                      target="_blank">诚征英才</a><span>|</span><a
+                href="http://www.ifeng.com/corp/privacy/" target="_blank">保护隐私权</a><span>|</span><a
+                href="http://www.ifeng.com/corp/exemption/" target="_blank">免责条款</a><span>|</span><a
+                href="http://help.ifeng.com/" target="_blank">意见反馈</a><span>|</span><a
+                href="http://phtv.ifeng.com/intro/" target="_blank">凤凰卫视介绍</a>
         </div>
         <div class="fk_r">
             <ul class="clearfix">
@@ -359,12 +471,14 @@ if(glue.device.type =="pad"){
             </ul>
         </div>
     </div>
-    <div class="copyright"><span>凤凰新媒体&nbsp;版权所有</span>&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2016 Phoenix New Media Limited All Rights Reserved.</div>
+    <div class="copyright"><span>凤凰新媒体&nbsp;版权所有</span>&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2016 Phoenix New Media
+        Limited All Rights Reserved.
+    </div>
 </div>
 <script>
-if((typeof device==="object")&&device.type!=="pc"){
-document.getElementById("footer").style.display="none";
-}
+    if ((typeof device === "object") && device.type !== "pc") {
+        document.getElementById("footer").style.display = "none";
+    }
 </script>
 <script src="http://m0.ifengimg.com/ifeng/sources/120331-iImpression.js"></script>
 <!-- START WRating v1.0 -->
@@ -380,9 +494,13 @@ document.getElementById("footer").style.display="none";
 <script> var sta_collection_time = new Date().getTime();</script>
 <script id="sta_collection_new">
     window.analytics(encodeURIComponent(window.location.href));
-    setTimeout(function() {
+    setTimeout(function () {
         window.aptracker.collection();
         window.remain();
     }, 800);
 </script>
-</body></html>
+<div id="ifeng_da_le" style="width: 1px; height: 1px;">
+    <script src="http://js.ifengimg.com/a/2016/0720/120331-iImpression.js"></script>
+</div>
+</body>
+</html>
